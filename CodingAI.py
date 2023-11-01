@@ -5,14 +5,8 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to Streamlit!
-
+# Welcome!
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
 """
 txt = st.text_area(
     "Text to analyze",
@@ -22,5 +16,15 @@ txt = st.text_area(
     "season of Darkness, it was the spring of hope, it was the winter of "
     "despair, (...)",
     )
+
+coding_area=st.text_area("Coding Area")
+output=st.text_area("Output")
+solution=st.text_area("Solution")
+# Just add it after st.sidebar:
+
+with st.sidebar.chat_message("user"):
+    a=st.sidebar.text_area("Hello, I am your Coding Companion. How Can I help!!👋",)
+
+st.write(f'You wrote {len(output)} characters.')
 
 st.write(f'You wrote {len(txt)} characters.')
